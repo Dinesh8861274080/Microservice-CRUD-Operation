@@ -1,18 +1,20 @@
-package com.department.department.Model;
+package com.example.demo.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "Departments1")
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Departments {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+ 
     private long id;
 
     @Column(name = "dept_name")
@@ -25,20 +27,16 @@ public class Departments {
     private String deptAddress;
 
 
+    public Departments(String deptName, String deptLocation, String deptAddress) {
+        super();
+        this.deptName = deptName;
+        this.deptLocation = deptLocation;
+        this.deptAddress = deptAddress;
+    }
+    
 
 
-
-    public Departments(long id, String deptName, String deptLocation, String deptAddress) {
-		super();
-		this.id = id;
-		this.deptName = deptName;
-		this.deptLocation = deptLocation;
-		this.deptAddress = deptAddress;
-	}
-
-
-
-	public Departments() {
+    public Departments() {
 		super();
 	}
 
@@ -48,19 +46,7 @@ public class Departments {
         return deptName;
     }
 
-    public long getId() {
-		return id;
-	}
-
-
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
-
-	public void setDeptName(String deptName) {
+    public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
 
@@ -80,3 +66,4 @@ public class Departments {
         this.deptAddress = deptAddress;
     }
 }
+

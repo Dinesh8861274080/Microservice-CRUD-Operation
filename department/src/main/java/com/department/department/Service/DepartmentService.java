@@ -12,4 +12,5 @@ public interface DepartmentService {
     public Departments createDepartment(Departments departments);
 
     DepartmentResponse findDepartmentById(Long id);
+	Departments update(Departments departmentResponse);
 }

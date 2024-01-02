@@ -36,6 +36,16 @@ public class DepartmentSServiceImpl implements DepartmentService{
         DepartmentResponse departmentResponse = mapper.map(department, DepartmentResponse.class);
         return departmentResponse;
     }
+    
+    @Override
+    public Departments update(Departments departmentResponse) {
+    	Departments departmentResponse2 = new Departments();
+    	departmentResponse2.setDeptAddress(departmentResponse.getDeptAddress());
+    	departmentResponse2.setDeptLocation(departmentResponse.getDeptLocation());
+    	departmentResponse2.setDeptName(departmentResponse.getDeptName());
+    	departmentResponse2.setId(departmentResponse.getId());
+    	return deptRepo.save(departmentResponse2);
+    }
 
 
 }

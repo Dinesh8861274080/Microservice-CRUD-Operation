@@ -37,6 +37,10 @@ public class DepartmentController {
         return deptService.createDepartment(departments);
     }
 
+    @PutMapping("/update")
+    public Departments updateDep(@RequestBody Departments departmentResponse) {
+    	return deptService.update(departmentResponse);
+    }
 
 
 
